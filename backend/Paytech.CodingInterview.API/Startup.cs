@@ -53,7 +53,7 @@ namespace Paytech.CodingInterview.API
 
             // Services            
             services.AddScoped<ICustomerService, CustomerService>();
-            services.AddScoped<INotificationService, NotificationService>();            
+            services.AddScoped<INotificationService, NotificationService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IExternalProductService, ExternalProductService>();
         }
@@ -76,6 +76,7 @@ namespace Paytech.CodingInterview.API
 
             RecurringJob.AddOrUpdate<IExternalProductService>("CreateUpdateProductsJob", x => x.CreateUpdateProductsAsync(), "0 10 * * *", TimeZoneInfo.Local);
 
+            app.UseCors(config => config.AllowAnyOrigin());
             app.UseRouting();
             app.UseAuthorization();
 
