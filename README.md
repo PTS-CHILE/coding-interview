@@ -1,2 +1,5 @@
-# coding-interview
-Repositório com o projeto base para a entrevista
+# Projeto base para o teste da entrevista PTS
+O repositório está dividido em duas partes, backend e frontend.
+
+# BACKEND
+
