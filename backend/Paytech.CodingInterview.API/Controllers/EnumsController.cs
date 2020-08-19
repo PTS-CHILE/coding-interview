@@ -18,7 +18,7 @@ namespace Paytech.CodingInterview.API.Controllers
         [Route("customerstatustypes")]
         public IActionResult GetCustomerStatusValues()
         {
-            return null;
+            return Ok(_service.GetCustomerStatusValues());
         }
     }
 }
