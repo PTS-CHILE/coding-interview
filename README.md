@@ -8,6 +8,14 @@ Os acessos ao banco de dados SQL e MongoDb serão enviados por email.
 
 O candidato deverá clonar o repositório enviado e subir todas as alterações nesse mesmo repositório.
 
+# frontend
+Requisitos: 
+- Node JS, pode ser a versão atual LTS (https://nodejs.org/en/).
+- Angular (CLI Global) `npm install -g @angular/cli`.
+- Após clonar o repositório, execute o seguinte comando dentro da pasta "frontend" `npm install`.
+- Após instalar os pacotes, configure a URL da API no caminho: "coding-interview/src/environments/environment.ts", propriedade "host".
+- Para rodar o projeto execute o comando `ng serve` ou `ng serve -o` ("-o" irá automaticamente abrir o navegador no endereço "http://localhost:4200/").
+
 ## Atividades:
 1. Todas as entidades do projeto possuem um campo comum "CreationDate", criar uma maneira de gravar esse campo de forma genérica sempre que criar um novo registro.
 2. Corrigir o erro que ocorre ao fazer uma requisição na controller "EnumsController" método "GetCustomerStatusValues". Esse método é invocado ao abrir a tela do front lista de clientes.
