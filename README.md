@@ -8,6 +8,9 @@ Os acessos ao banco de dados SQL e MongoDb serão enviados por email.
 
 O candidato deverá clonar o repositório enviado e subir todas as alterações nesse mesmo repositório.
 
+# frontend
+Requisitos: Node JS
+
 ## Atividades:
 1. Todas as entidades do projeto possuem um campo comum "CreationDate", criar uma maneira de gravar esse campo de forma genérica sempre que criar um novo registro.
 2. Corrigir o erro que ocorre ao fazer uma requisição na controller "EnumsController" método "GetCustomerStatusValues".
