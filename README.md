@@ -41,7 +41,7 @@ Requisitos:
     - Endpoint do erro;
     - Detalhes da exception;
 6. Escrever no arquivo [query-mongo](feedback/query-mongo.txt) qual seria a query no MongoDb para retornar todos os erros desde 01/08/2020.
-6. Finalizar a implementação do método CreateUpdateProductsAsync da service ExternalProductService que é invocado pelo HangFire (clique aqui para mais detalhes do Hangfire)
+6. Finalizar a implementação do método CreateUpdateProductsAsync da service ExternalProductService que é invocado pelo HangFire (clique [aqui](#hangfire) para mais detalhes do Hangfire)
     - Esse método irá trabalhar com a entidade ExternalProducts que já está criada com os seguintes campos:
         - Id
         - ExternalReferenceId
@@ -59,8 +59,16 @@ Requisitos:
         - Para verificar se o produto já se encontra registrado, utilizar o campo ExternalReferenceId que faz referência ao Id retornado pela API
 7. Corrigir o erro que ocorre ao fazer uma requisição na controller "ExternalProductsController"
 
+## HangFire
+Hangfire é uma ferramenta para executar processos e jobs em background diretamente nas aplicações ASP.NET Core.
+
+O framework já está configurado nessa aplicação e para acessá-lo basta entrar em "https://url-aplicacao-backend/jobs/recurring"
+
+A documentação do Hangfire está disponível em https://www.hangfire.io/
+
 ## Feedbacks
 Caso deseje explicar alguma implementação, por favor deixar seus comentários no arquivo [feedback](feedback/feedback.txt)
+
 Gostaríamos também de ouvir a sua opnião e sugestões sobre a prova.
 
 Obrigado por participar do processo seletivo da PTS.
