@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+[clickmode] {
+	cursor: pointer;
+}
+
+[labelRequired] {
+	&::before {
+		display: inline-block;
+		margin-right: 4px;
+		color: #f5222d;
+		font-size: 14px;
+		font-family: SimSun, sans-serif;
+		line-height: 1;
+		content: '*';
+	}
+}
+
+.buttons-container {
+	margin: 40px 0 0;
+	padding-bottom: 32px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+	> button {
+		margin-right: 16px;
+		&:last-child {
+			margin-right: 0
+		}
+	}
+}
+
+.list-filters {
+	margin-bottom: 24px;
+	padding-top: 24px;
+
+	.filter-container {
+		padding-bottom: 16px
+	}
+
+	.buttons-filter-container {
+		display: flex;
+		align-items: center;
+
+		> button {
+			margin-right: 16px;
+			&:last-child {
+				margin-right: 0
+			}
+		}
+	}
+}
+
+.formfield-invalid-feedback {
+	clear: both;
+  min-height: 22px;
+  color: rgba(0,0,0,.45);
+  font-size: 14px;
+  line-height: 1.5;
+	transition: color .3s cubic-bezier(.215,.61,.355,1);
+	color: #f5222d;
+}

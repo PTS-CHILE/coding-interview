@@ -1,0 +1,26 @@
+<app-header [headerText]="headerText"></app-header>
+
+<div labelRequired style="margin:8px 0">Campos obrigatórios</div>
+<form [formGroup]="categoryForm">
+	<div class="form-row">
+		<div class="col col-12 form-group">
+			<label for="categoryName" labelRequired>Nome</label>
+			<input type="text" class="form-control" id="categoryName" formControlName="name" maxlength="50">
+			<div class="formfield-invalid-feedback" *ngIf="_categoryName?.dirty && _categoryName?.errors">
+        Por favor, selecione um Nome.
+      </div>
+		</div>
+	</div>
+</form>
+
+<div class="buttons-container">
+	<button type="button" class="btn btn-secondary" (click)="cancel()">
+		Cancelar
+	</button>
+	<button type="button" class="btn btn-danger" (click)="deleteCategory()" *ngIf="paramId > 0">
+		Deletar
+	</button>
+	<button type="button" class="btn btn-primary" (click)="confirm()">
+		Confirmar
+	</button>
+</div>

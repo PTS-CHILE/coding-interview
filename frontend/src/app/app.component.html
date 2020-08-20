@@ -1,0 +1,32 @@
+<div id="container">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-pills border-rad-4">
+		<span class="navbar-brand">PTS - Coding Interview</span>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" routerLink="home" routerLinkActive="active">Inicio</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="customers" routerLinkActive="active">Clientes</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="categories" routerLinkActive="active">Categorias</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="products" routerLinkActive="active">Produtos</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="content" class="container-xl bg-light border-rad-4">
+		<router-outlet></router-outlet>
+	</div>
+</div>
+
+<app-loader></app-loader>

@@ -1,0 +1,31 @@
+<!-- Filters and Search -->
+<div class="list-filters">
+
+	<div class="buttons-filter-container">
+		<button type="button" class="btn btn-secondary" (click)="create()">
+			Criar Categoria
+		</button>
+	</div>
+</div>
+
+<!-- List -->
+<div class="table-responsive">
+	<table class="table table-hover" aria-hidden="true">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Data de Criação</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of categories" (click)="goToDetail(item.id)" clickmode>
+				<td>{{ item.id }}</td>
+				<td>{{ item.name }}</td>
+				<td>{{ item.creationDate | date: 'dd/MM/yyyy HH:mm' }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- Pagination -->

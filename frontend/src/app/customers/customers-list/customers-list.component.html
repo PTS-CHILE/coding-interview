@@ -1,0 +1,53 @@
+<!-- Filters and Search -->
+<div class="list-filters">
+	<div class="filter-container">
+		<h5>Filtros:</h5>
+		<form [formGroup]="filterForm">
+			<div class="col col-md-6 form-group">
+				<label for="filterStatus" labelRequired>Estado</label>
+				<select class="form-control" id="filterStatus" formControlName="status">
+					<option style="display:none;" value>Selecione um Estado...</option>
+					<option *ngFor="let item of status" [value]="item.id">{{ item.name }}</option>
+				</select>
+			</div>
+		</form>
+	</div>
+
+	<div class="buttons-filter-container">
+		<button type="button" class="btn btn-primary" (click)="search()">
+			Buscar
+		</button>
+		<button type="button" class="btn btn-secondary" (click)="clearFilters()">
+			Limpar Filtros
+		</button>
+		<button type="button" class="btn btn-secondary" (click)="create()">
+			Criar Cliente
+		</button>
+	</div>
+</div>
+
+<!-- List -->
+<div class="table-responsive">
+	<table class="table table-hover" aria-hidden="true">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Num. Documento</th>
+				<th scope="col">Nome</th>
+				<th scope="col">Estado</th>
+				<th scope="col">Categoria</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of customers" (click)="goToDetail(item.id)" clickmode>
+				<td>{{ item.id }}</td>
+				<td>{{ item.documentNumber }}</td>
+				<td>{{ item.name }}</td>
+				<td>{{ item.statusDescription }}</td>
+				<td>{{ item.categoryName }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- Pagination -->

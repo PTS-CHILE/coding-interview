@@ -1,0 +1,47 @@
+<app-header [headerText]="headerText"></app-header>
+
+<div labelRequired style="margin:8px 0">Campos obrigatórios</div>
+<form [formGroup]="customerForm">
+	<div class="form-row">
+		<div class="col col-md-4 col-12 form-group">
+			<label for="customerDocumentNumber" labelRequired>Num. Documento</label>
+			<input type="text" class="form-control" id="customerDocumentNumber" formControlName="documentNumber" maxlength="15">
+			<div class="formfield-invalid-feedback" *ngIf="_customerDocumentNumber?.dirty && _customerDocumentNumber?.errors">
+        Por favor, insira um Num. de Documento.
+      </div>
+		</div>
+		<div class="col col-md-8 col-12 form-group">
+			<label for="customerName" labelRequired>Nome</label>
+			<input type="text" class="form-control" id="customerName" formControlName="name" maxlength="50">
+			<div class="formfield-invalid-feedback" *ngIf="_customerName?.dirty && _customerName?.errors">
+        Por favor, insira um Nome.
+      </div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="col form-group">
+			<label for="customerCategoryId" labelRequired>Categoria</label>
+			<select class="form-control" id="customerCategoryId" formControlName="categoryId">
+				<option style="display:none;" value>Selecione uma Categoria...</option>
+				<!-- <option *ngFor="let item of categories" [value]="item.id">{{ item.name }}</option> -->
+				<option value="1">Categoria 1</option>
+				<option value="2">Categoria 2</option>
+			</select>
+			<div class="formfield-invalid-feedback" *ngIf="_customerCategoryId?.dirty && _customerCategoryId?.errors">
+        Por favor, selecione uma Categoria.
+      </div>
+		</div>
+	</div>
+</form>
+
+<div class="buttons-container">
+	<button type="button" class="btn btn-secondary" (click)="cancel()">
+		Cancelar
+	</button>
+	<button type="button" class="btn btn-danger" (click)="deleteCustomer()" *ngIf="paramId > 0">
+		Deletar
+	</button>
+	<button type="button" class="btn btn-primary" (click)="confirm()">
+		Confirmar
+	</button>
+</div>
