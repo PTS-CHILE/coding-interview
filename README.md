@@ -41,7 +41,7 @@ Requisitos:
     - Endpoint do erro;
     - Detalhes da exception;
 6. Escrever no arquivo [query-mongo](feedback/query-mongo.txt) qual seria a query no MongoDb para retornar todos os erros desde 01/08/2020.
-6. Finalizar a implementação do método CreateUpdateProductsAsync da service ExternalProductService que é invocado pelo HangFire ([clique aqui para mais detalhes do Hangfire](#hangfire))
+7. Finalizar a implementação do método CreateUpdateProductsAsync da service ExternalProductService que é invocado pelo HangFire ([clique aqui para mais detalhes do Hangfire](#hangfire))
     - Esse método irá trabalhar com a entidade ExternalProducts que já está criada com os seguintes campos:
         - Id
         - ExternalReferenceId
@@ -57,7 +57,7 @@ Requisitos:
         - Inserir no banco de dados todos os produtos retornados da API e que ainda não estão registrados
         - Atualizar os produtos no banco de dados que já estejam registrados
         - Para verificar se o produto já se encontra registrado, utilizar o campo ExternalReferenceId que faz referência ao Id retornado pela API
-7. Corrigir o erro que ocorre ao fazer uma requisição na controller "ExternalProductsController"
+8. Corrigir o erro que ocorre ao fazer uma requisição na controller "ExternalProductsController"
 
 ## HangFire
 Hangfire é uma ferramenta para executar processos e jobs em background diretamente nas aplicações ASP.NET Core.
@@ -68,23 +68,32 @@ A documentação do Hangfire está disponível em https://www.hangfire.io/
 
 ## API Produtos - Documentação 
 A API possui dois metodos:
- - Login, para se autenticar na API e que te devolve um token valido para acesso aos outros métodos.
-    [POST][https://dev.paytechholding.com/coding-interview-products/api/login]
-    Request Body: objeto JSON conforme estrutura e valores abaixo
+1. Login, para se autenticar na API e que te devolve um token valido para acesso aos outros métodos.
+    - [POST][https://dev.paytechholding.com/coding-interview-products/api/login]
+    - Request Body: objeto JSON conforme estrutura e valores abaixo
+    ```
     {
         "id": "paytech",
         "password": "pts@2020"
     }
-    Response Body: objeto JSON conforme estrutura e valores abaixo
-    "user": {
-        "id": "paytech"
-    },
-    "token": "<token>"
- - Consulta de produtos, retorna uma lista de produtos
-    [GET][https://dev.paytechholding.com/coding-interview-products/api/products]
-    Request Header: enviar parametro "Authorization" com valor conforme abaixo, onde <token> é o <token> retornado no Login
-    "Bearer <token>" (sem os caracteres <>)
-    Response Body: lista de objetos JSON conforme estrutura abaixo
+    ```
+    - Response Body: objeto JSON conforme estrutura e valores abaixo
+    ```
+    {
+       "user": {
+           "id": "paytech"
+       },
+       "token": "<token>"
+    }
+    ```
+2. Consulta de produtos, retorna uma lista de produtos
+    - [GET][https://dev.paytechholding.com/coding-interview-products/api/products]
+    - Request Header: enviar parametro "Authorization" com valor conforme abaixo, onde `token` é o `token` retornado no Login
+    ```
+    "Authorization": "Bearer token"
+    ```
+    - Response Body: lista de objetos JSON conforme estrutura abaixo
+    ```
     [
         {
             "id": int,
@@ -97,6 +106,7 @@ A API possui dois metodos:
         },
         ...
     ]
+    ```
     
 ## Feedbacks
 Caso deseje explicar alguma implementação, por favor deixar seus comentários no arquivo [feedback](feedback/feedback.txt)
