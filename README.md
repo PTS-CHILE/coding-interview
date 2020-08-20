@@ -60,4 +60,7 @@ Requisitos:
 7. Corrigir o erro que ocorre ao fazer uma requisição na controller "ExternalProductsController"
 
 ## Feedbacks
-Caso deseje explicar alguma implementação ou sugestões sobre a prova, por favor deixar seus comentários no arquivo [feedback](feedback/feedback.txt)
+Caso deseje explicar alguma implementação, por favor deixar seus comentários no arquivo [feedback](feedback/feedback.txt)
+Gostaríamos também de ouvir a sua opnião e sugestões sobre a prova.
+
+Obrigado por participar do processo seletivo da PTS.
