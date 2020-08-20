@@ -41,7 +41,7 @@ Requisitos:
     - Endpoint do erro;
     - Detalhes da exception;
 6. Escrever no arquivo [query-mongo](feedback/query-mongo.txt) qual seria a query no MongoDb para retornar todos os erros desde 01/08/2020.
-6. Finalizar a implementação do método CreateUpdateProductsAsync da service ExternalProductService que é invocado pelo HangFire (clique [aqui](#hangfire) para mais detalhes do Hangfire)
+6. Finalizar a implementação do método CreateUpdateProductsAsync da service ExternalProductService que é invocado pelo HangFire ([clique aqui para mais detalhes do Hangfire](#hangfire))
     - Esse método irá trabalhar com a entidade ExternalProducts que já está criada com os seguintes campos:
         - Id
         - ExternalReferenceId
@@ -52,7 +52,7 @@ Requisitos:
         - IsRemoved
         - CreationDate
     - O processo deve consumir uma API e popular a tabela de acordo com os dados retornados
-        - Os requisitos para o consumo da API estão descritos na sessão (LINK PARA REFERENCIA)
+        - Os requisitos para o consumo da API estão descritos na sessão ([documentação API de produtos](#api))
     - O fluxo do processo deve ser o seguinte:
         - Inserir no banco de dados todos os produtos retornados da API e que ainda não estão registrados
         - Atualizar os produtos no banco de dados que já estejam registrados
@@ -65,6 +65,8 @@ Hangfire é uma ferramenta para executar processos e jobs em background diretame
 O framework já está configurado nessa aplicação e para acessá-lo basta entrar em "https://url-aplicacao-backend/jobs/recurring"
 
 A documentação do Hangfire está disponível em https://www.hangfire.io/
+
+## API Produtos - Documentação 
 
 ## Feedbacks
 Caso deseje explicar alguma implementação, por favor deixar seus comentários no arquivo [feedback](feedback/feedback.txt)
