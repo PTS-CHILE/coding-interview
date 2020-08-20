@@ -21,7 +21,6 @@ Requisitos:
 2. Corrigir o erro que ocorre ao fazer uma requisição na controller "EnumsController" método "GetCustomerStatusValues". Esse método é invocado ao abrir a tela do front lista de clientes.
 3. Corrigir os erros apresentados na controller "CategoriesController":
     - Erro ao realizar um GET no método GetAsync.
-    - Erro ao cadastrar uma nova categoria no método PostAsync. (TIRARRRRRR)
     - Erro ao atualizar o registro no método PutAsync.
     - Formatar o campo CreationDate na resposta do método GetAsync. O formato deve seguir o seguinte padrão (MES_ABREVIADO/ANO), ex: jun/2020, ago/2020
 4. Criar um CRUD de empregados no backend e frontend, requisitos:
@@ -41,11 +40,21 @@ Requisitos:
     - Data do erro;
     - Endpoint do erro;
     - Detalhes da exception;
-6. Terminar a implementação do job CreateUpdateProductsJob que é executado pelo HangFire, requisitos:
-    - Consumir a API que retorna uma lista de produtos
+6. Escrever no arquivo (caminho do arquivo) qual seria a query no MongoDb para retornar todos os erros desde 01/08/2020.
+6. Finalizar a implementação do método CreateUpdateProductsAsync da service ExternalProductService que é invocado pelo HangFire (clique aqui para mais detalhes do Hangfire)
+    - Esse método irá trabalhar com a entidade ExternalProducts que já está criada com os seguintes campos:
+        - Id
+        - ExternalReferenceId
+        - Name
+        - Code
+        - ExpireDate
+        - LastUpdate
+        - IsRemoved
+        - CreationDate
+    - O processo deve consumir uma API e popular a tabela de acordo com os dados retornados
         - Os requisitos para o consumo da API estão descritos na sessão (LINK PARA REFERENCIA)
-    - Para todos os produtos retornados nessa lista e que não estão registrados no nosso banco, o job deve criar o registro
-    - Todos os produtos já existentes o sistema deve atualizar o registro
-    - O campo ExternalReferenceId na tabela ExternalProducts faz referência ao Id retornado pela API
+    - O fluxo do processo deve ser o seguinte:
+        - Inserir no banco de dados todos os produtos retornados da API e que ainda não estão registrados
+        - Atualizar os produtos no banco de dados que já estejam registrados
+        - Para verificar se o produto já se encontra registrado, utilizar o campo ExternalReferenceId que faz referência ao Id retornado pela API
 7. Corrigir o erro que ocorre ao fazer uma requisição na controller "ExternalProductsController"
-

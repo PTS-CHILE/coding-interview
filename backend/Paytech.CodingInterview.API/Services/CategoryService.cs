@@ -4,6 +4,7 @@ using Paytech.CodingInterview.API.Data.DTOs.Commands;
 using Paytech.CodingInterview.API.Data.DTOs.Views;
 using Paytech.CodingInterview.API.Data.Entities;
 using Paytech.CodingInterview.API.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,7 +33,8 @@ namespace Paytech.CodingInterview.API.Services
             var category = new Category
             {
                 Name = createUpdateCategoryCommand.Name,
-                IsRemoved = false
+                IsRemoved = false,
+                CreationDate = DateTime.Now
             };
 
             _context.Add(category);
