@@ -67,7 +67,37 @@ O framework já está configurado nessa aplicação e para acessá-lo basta entr
 A documentação do Hangfire está disponível em https://www.hangfire.io/
 
 ## API Produtos - Documentação 
-
+A API possui dois metodos:
+ - Login, para se autenticar na API e que te devolve um token valido para acesso aos outros métodos.
+    [POST][https://dev.paytechholding.com/coding-interview-products/api/login]
+    Request Body: objeto JSON conforme estrutura e valores abaixo
+    {
+        "id": "paytech",
+        "password": "pts@2020"
+    }
+    Response Body: objeto JSON conforme estrutura e valores abaixo
+    "user": {
+        "id": "paytech"
+    },
+    "token": "<token>"
+ - Consulta de produtos, retorna uma lista de produtos
+    [GET][https://dev.paytechholding.com/coding-interview-products/api/products]
+    Request Header: enviar parametro "Authorization" com valor conforme abaixo, onde <token> é o <token> retornado no Login
+    "Bearer <token>" (sem os caracteres <>)
+    Response Body: lista de objetos JSON conforme estrutura abaixo
+    [
+        {
+            "id": int,
+            "name": string,
+            "code": string,
+            "creationDate": dateTime,
+            "expireDate": dateTime,
+            "lastUpdate": dateTime,
+            "isRemoved": boolean
+        },
+        ...
+    ]
+    
 ## Feedbacks
 Caso deseje explicar alguma implementação, por favor deixar seus comentários no arquivo [feedback](feedback/feedback.txt)
 
