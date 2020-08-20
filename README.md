@@ -13,7 +13,7 @@ Requisitos:
 - Node JS, pode ser a versão atual LTS (https://nodejs.org/en/).
 - Angular (CLI Global) `npm install -g @angular/cli`.
 - Após clonar o repositório, execute o seguinte comando dentro da pasta "frontend" `npm install`.
-- Após instalar os pacotes, configure a URL da API no caminho: "coding-interview/src/environments/environment.ts", propriedade "host".
+- Após instalar os pacotes, configure a URL da API no caminho: "frontend/src/environments/environment.ts", propriedade "host".
 - Para rodar o projeto execute o comando `ng serve` ou `ng serve -o` ("-o" irá automaticamente abrir o navegador no endereço "http://localhost:4200/").
 
 ## Atividades

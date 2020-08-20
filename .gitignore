@@ -22,10 +22,10 @@
 /*/*/.vs/*
 /*/*/*/.vs/*
 */*/wkhtmltopdf/*
-/FrontEnd/.vscode
+/frontend/.vscode
 package-lock.json
-/FrontEnd/CardHolder/.vscode
-/FrontEnd/Admin/.vscode
+/frontend/CardHolder/.vscode
+/frontend/Admin/.vscode
 BackEnd/UpgradeLog3.htm
 BackEnd/UpgradeLog4.htm
 BackEnd/UpgradeLog5.htm

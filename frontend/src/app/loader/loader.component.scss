@@ -1,0 +1,28 @@
+#loader-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100vw;
+	height: 100vh;
+	visibility: hidden;
+	background-color: rgba(255, 255, 255, .6);
+
+	&[open="true"] {
+		visibility: visible;
+	}
+}
+
+#loader-content {
+	width: 104px;
+	height: 104px;
+	line-height: 1.5;
+	text-align: center;
+
+	.loader-text {
+		margin: 16px 0
+	}
+}
