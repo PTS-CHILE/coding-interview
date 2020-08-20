@@ -40,7 +40,7 @@ Requisitos:
     - Data do erro;
     - Endpoint do erro;
     - Detalhes da exception;
-6. Escrever no arquivo (caminho do arquivo) qual seria a query no MongoDb para retornar todos os erros desde 01/08/2020.
+6. Escrever no arquivo [query-mongo](feedback/query-mongo.txt) qual seria a query no MongoDb para retornar todos os erros desde 01/08/2020.
 6. Finalizar a implementação do método CreateUpdateProductsAsync da service ExternalProductService que é invocado pelo HangFire (clique aqui para mais detalhes do Hangfire)
     - Esse método irá trabalhar com a entidade ExternalProducts que já está criada com os seguintes campos:
         - Id
@@ -58,3 +58,6 @@ Requisitos:
         - Atualizar os produtos no banco de dados que já estejam registrados
         - Para verificar se o produto já se encontra registrado, utilizar o campo ExternalReferenceId que faz referência ao Id retornado pela API
 7. Corrigir o erro que ocorre ao fazer uma requisição na controller "ExternalProductsController"
+
+## Feedbacks
+Caso deseje explicar alguma implementação ou sugestões sobre a prova, por favor deixar seus comentários no arquivo [feedback](feedback/feedback.txt)
