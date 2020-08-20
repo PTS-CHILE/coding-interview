@@ -10,13 +10,14 @@ O candidato deverá clonar o repositório enviado e subir todas as alterações 
 
 ## Atividades:
 1. Todas as entidades do projeto possuem um campo comum "CreationDate", criar uma maneira de gravar esse campo de forma genérica sempre que criar um novo registro.
-2. Corrigir o erro que ocorre ao fazer uma requisição na controller "EnumsController" método "GetCustomerStatusValues".
+2. Corrigir o erro que ocorre ao fazer uma requisição na controller "EnumsController" método "GetCustomerStatusValues". Esse método é invocado ao abrir a tela do front lista de clientes.
 3. Corrigir os erros apresentados na controller "CategoriesController":
     - Erro ao realizar um GET no método GetAsync.
-    - Erro ao cadastrar uma nova categoria no método PostAsync.
+    - Erro ao cadastrar uma nova categoria no método PostAsync. (TIRARRRRRR)
     - Erro ao atualizar o registro no método PutAsync.
     - Formatar o campo CreationDate na resposta do método GetAsync. O formato deve seguir o seguinte padrão (MES_ABREVIADO/ANO), ex: jun/2020, ago/2020
-4. Criar um cadastro de empregados na api, requisitos:
+4. Criar um CRUD de empregados no backend e frontend, requisitos:
+    - Deve contemplar cadastro, alteração e eliminação
     - A tabela de empregados deve conter os seguintes campos:
         - Nome
         - Nº de documento
@@ -26,10 +27,12 @@ O candidato deverá clonar o repositório enviado e subir todas as alterações 
         - Tipo (1 - Comercial e 2 - Residencial)
         - Rua
         - Numero
-        - Bairro
     - O sistema deve validar se já existe um empregado com o mesmo número de documento
     - Um empregado deve ter no mínimo 1 endereço e no máximo 3. Considerar que esses limites podem sofrer alterações no futuro.
-5. Implementar uma forma de capturar todos os exceptions não tratados do sistema e gravar esses erros em uma collection do MongoDb.
+5. Implementar uma forma de capturar todos os exceptions não tratados do sistema e gravar esses erros em uma collection do MongoDb. Deve conter os seguintes campos:
+    - Data do erro;
+    - Endpoint do erro;
+    - Detalhes da exception;
 6. Terminar a implementação do job CreateUpdateProductsJob que é executado pelo HangFire, requisitos:
     - Consumir a API que retorna uma lista de produtos
         - Os requisitos para o consumo da API estão descritos na sessão (LINK PARA REFERENCIA)
